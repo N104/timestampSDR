@@ -35,7 +35,7 @@ const handleTimeout = () => {
 				if (err) console.log(`Error encountered while attempting to remove .temp label from file ${file.name}`.red.bold, err);
 			});
 			console.log(`++ Recording #${currFileNum} saved (${secondsElapsedTotal}s)`.green);
-			if (currFileNum < options.maxFiles) {
+			if (currFileNum < options.maxFiles || options.maxFiles == 0) {
 				currFileNum++;
 			}
 			else {

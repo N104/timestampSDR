@@ -45,8 +45,8 @@ const isOptionInvalid = (option, key) =>{
 	if (key === "minDuration" && isNumInvalid({ num: val, min: 0 })) {
 		return wasInvalid(option, key, "Must be a non-negative number");
 	}
-	if (key === "maxFiles" && isNumInvalid({ num: val, min: 1, isInt: true })) {
-		return wasInvalid(option, key, "Must be a positive integer");
+	if (key === "maxFiles" && isNumInvalid({ num: val, min: 0, isInt: true })) {
+		return wasInvalid(option, key, "Must be a positive integer or 0 for unlimited");
 	}
 	if (key === "port" && isNumInvalid({ num: val, min: 1, max: 65535, isInt: true })) {
 		return wasInvalid(option, key, "Must be an integer between 1 and 65535");
